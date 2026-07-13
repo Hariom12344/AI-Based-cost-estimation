@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background: radial-gradient(circle at 10% 20%, rgba(12, 16, 26, 1) 0%, rgba(10, 11, 13, 1) 90.1%);
+  }
+}
+
+/* Custom Glassmorphism Component styles */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-panel-glow {
+  box-shadow: 0 8px 32px 0 rgba(0, 242, 254, 0.05);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient-brand {
+  background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+}
+
+.glow-btn:hover {
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+}
