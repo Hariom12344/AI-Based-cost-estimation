@@ -1,0 +1,28 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      target: dev
+    container_name: intellicam-backend
+    environment:
+      - DATABASE_URL=sqlite:///./intelli_cam.db
+      - CORS_ORIGINS=["http://localhost:5173"]
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+
+  frontend:
+    build:
+      context: ./frontend
+      target: dev
+    container_name: intellicam-frontend
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_BASE_URL=http://localhost:8000/api/v1
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend
